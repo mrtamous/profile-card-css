@@ -61,6 +61,8 @@ footer {
 .card figure {
   display: flex;
   flex-flow: column nowrap;
+  width: 100%;
+  align-items: center;
 }
 .aboslutan {
   height: 250px;
@@ -103,10 +105,26 @@ main {
 
 /* media  */
 
-@media (570px <= width) {
+@media (576px <= width) {
+  main {
+    justify-content: center;
+    flex-flow: row wrap;
+    padding: 1rem;
+  }
+
+  .card {
+    width: min(100%, 400px);
+  }
+
+  .card:last-child {
+    order: -1;
+  }
+}
+
+@media (860px <= width) {
   body {
-    background-color: green;
-    background-image: radial-gradient(whitesmoke, green);
+    background-color: gold;
+    background-image: radial-gradient(whitesmoke, gold);
   }
 
   nav {
@@ -114,39 +132,54 @@ main {
   }
 }
 
-@media (768px <= width) {
-  body {
-    background-color: gold;
-    background-image: radial-gradient(whitesmoke, gold);
-  }
-}
-
 @media (992px <= width) {
-  body {
-    background-color: firebrick;
-    background-image: radial-gradient(whitesmoke, firebrick);
+  .card {
+    width: min(100%, 400px);
+  }
+  .card:nth-child(2) {
+    order: -1;
   }
 }
 
 @media (1200px <= width) {
-  body {
-    background-color: rebeccapurple;
-    background-image: radial-gradient(whitesmoke, rebeccapurple);
+  .card {
+    width: min(calc(33% - 1rem), 500px);
   }
 }
-/* mobile device landscape */
-@media (992px <= width) and (min-aspect-ratio: 7/4) {
-  body {
-    background-color: dodgerblue;
-    background-image: radial-gradient(whitesmoke, dodgerblue);
-  }
 
-  h1,
-  h2 {
+/* mobile device landscape */
+@media (425px <= width < 1199px) and (min-aspect-ratio: 7/4) {
+  h1 {
     font-size: 1.5rem;
   }
 
   nav {
     display: none;
+  }
+
+  main {
+    flex-flow: row nowrap;
+    justify-self: space-evenly;
+  }
+
+  .card {
+    width: min(calc(25% - 0.25rem), 200px);
+  }
+
+  .card figcaption .card p {
+    font-size: 1.25rem;
+  }
+
+  .aboslutan {
+    width: 100px;
+    height: 100px;
+  }
+  .card figcaption {
+    font-size: 1.2rem;
+  }
+
+  .card p {
+    font-size: 0.8rem;
+    font-weight: bolder;
   }
 }
