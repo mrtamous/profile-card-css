@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
+
+/* make all elements zero p and m */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+body {
+  font: 1.5rem "Nunito", sans-serif;
+  /* max-width: 100vw; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: radial-gradient(white, #475564);
+}
+header,
+footer {
+  position: sticky;
+  background-color: darkgrey;
+  color: whitesmoke;
+  text-align: center;
+}
+
+header {
+  top: 0;
+}
+footer {
+  bottom: 0;
+}
+
+.card {
+  width: min(100%, 350px);
+  background-color: gray;
+  border: 2px solid #000;
+  border-radius: 15px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-margin-top: 8rem;
+}
+
+.card img {
+  border: 5px double #000;
+  border-radius: 50%;
+}
+
+.card figure {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.aboslutan {
+  height: 250px;
+  width: 250px;
+}
+.card figcaption {
+  font-weight: bolder;
+  font-size: 2rem;
+  margin: 1rem;
+  text-align: center;
+}
+nav {
+  background-color: #fff;
+  padding: 0.5rem;
+  border-bottom: 2px solid #000;
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav a,
+nav a:visited {
+  color: #000;
+}
+
+nav a:focus,
+nav a:hover {
+  color: hsla(0, 0%, 20%, 0.6);
+  /* color: red; */
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* media  */
+
+@media (570px <= width) {
+  body {
+    background-color: green;
+    background-image: radial-gradient(whitesmoke, green);
+  }
+
+  nav {
+    display: none;
+  }
+}
+
+@media (768px <= width) {
+  body {
+    background-color: gold;
+    background-image: radial-gradient(whitesmoke, gold);
+  }
+}
+
+@media (992px <= width) {
+  body {
+    background-color: firebrick;
+    background-image: radial-gradient(whitesmoke, firebrick);
+  }
+}
+
+@media (1200px <= width) {
+  body {
+    background-color: rebeccapurple;
+    background-image: radial-gradient(whitesmoke, rebeccapurple);
+  }
+}
+/* mobile device landscape */
+@media (992px <= width) and (min-aspect-ratio: 7/4) {
+  body {
+    background-color: dodgerblue;
+    background-image: radial-gradient(whitesmoke, dodgerblue);
+  }
+
+  h1,
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    display: none;
+  }
+}
